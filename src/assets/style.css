@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'pfdin';
+    src: url(/public/fonts/PFDinTextCondPro-Regular.ttf) format("opentype");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'pfdin';
+    src: url(/public/fonts/pfdintextcondpro-medium.ttf) format("opentype");
+    font-weight: 500;
+  }
+}
