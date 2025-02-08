@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const RouterList = {
   "Товары": ["Флотмашины и чаны", "автоматизация", "SN"],
   "Услуги": ["Сервис обработки", "lorem"],
@@ -20,25 +22,39 @@ const navType = ( item ) => {
 <template>
   <header class="sticky top-0 mt-[30px]">
     <nav class="h-full w-full flex-col textFormat">
-      <div class="bg-darkHeader navLine -skew-x-[15deg] right-[12px] before:absolute before:inset-0 before:-right-3
-                  before:left-2 before:bg-darkHeader before:skew-x-[15deg]"
+      <div class="flex justify-between bg-darkHeader navLine -skew-x-[15deg] right-[12px] before:absolute before:inset-0 before:-right-[12px]
+                  before:left-[8px] before:bg-darkHeader before:skew-x-[15deg]"
       >
-        <div v-for="(item, index) in RouterList"
+        <div class="flex ">
+          <div v-for="(item, index) in RouterList"
                :key="index"
                class="navItem"
                :class="JSON.stringify(item) === JSON.stringify(targetList) && showNav
                        ? 'bg-header text-darkText hover:text-darkText0.5'
                        : 'hover:opacity-50'"
                @click="navType(item)"
-        >
-          <p class="px-[15px] py-[10px] skew-x-[15deg]">
-            {{ index }}
-          </p>
+          >
+            <p class="px-[15px] py-[10px] skew-x-[15deg]">
+              {{ index }}
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center skew-x-[15deg]">
+          <button class="bg-button uppercase my-[5px] py-[13px] px-[45.5px] rounded hover:opacity-80">
+            Оставить заявку
+          </button>
+          <a class="uppercase pl-[37px] pr-[28px] hover:opacity-80 cursor-pointer">
+            Контакты
+          </a>
+          <img src="@/assets/icons/search.svg" alt="search" class="cursor-pointer  hover:opacity-50" @click="router.push('/search')">
+          <button class="pl-[28px]  hover:opacity-50 cursor-pointer">
+            EN
+          </button>
         </div>
       </div>
       <ul v-if="showNav"
-          class="bg-header navLine -skew-x-[15deg] right-[26px] before:absolute before:inset-0 before:-right-[26.1px]
-                 before:left-2 before:bg-header before:skew-x-[15deg]"
+          class="bg-header navLine -skew-x-[15deg] right-[28px] before:absolute before:inset-0 before:-right-[28px]
+                 before:left-2 before:bg-header before:skew-x-[15deg] "
       >
           <li v-for="(item, index) in targetList"
               :key="index"

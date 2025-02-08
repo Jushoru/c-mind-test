@@ -19,7 +19,7 @@ export default {
         "darkText": "#503D3A",
         "darkText0.5": "rgba(80,61,58,0.5)",
         "text": "#AA927A",
-        "button": "#311311"
+        "button": "#311311",
       },
       textUnderlineOffset: {
         '1px': '0.0521vw'
