@@ -1,30 +1,73 @@
-
 <script setup>
-const navList = ["Товары", "Услуги", "Компания"]
+import { ref } from "vue";
+
+const RouterList = {
+  "Товары": ["Флотмашины и чаны", "автоматизация", "SN"],
+  "Услуги": ["Сервис обработки", "lorem"],
+  "Компания": ["lorem1", "lorem2"]
+}
+const targetList = ref(RouterList['Товары'])
+const showNav = ref(false)
+
+const navType = ( item ) => {
+  if (JSON.stringify(targetList.value) === JSON.stringify(item) || showNav.value === false) {
+    showNav.value = !showNav.value
+  }
+  targetList.value = item
+ }
 </script>
+
 <template>
-  <div class="sticky top-0 mt-[30px]">
-    <nav class="ml-auto max-w-[75%] mr-[30px] py-[18px] bg-header headerSkew textFormat">
-      <div class="ml-auto flex items-center space-x-4">
-      <ul class="flex space-x-6 px-4">
-        <li v-for="(item, index) in navList" :key="index">
-          <a href="#" class="px-[30px]">
-            {{ item }}
-          </a>
-        </li>
-      </ul>
+  <header class="sticky top-0 mt-[30px]">
+    <nav class="h-full w-full flex-col textFormat">
+      <div class="bg-darkHeader navLine -skew-x-[15deg] right-[12px] before:absolute before:inset-0 before:-right-3
+                  before:left-2 before:bg-darkHeader before:skew-x-[15deg]"
+      >
+        <div v-for="(item, index) in RouterList"
+               :key="index"
+               class="navItem"
+               :class="JSON.stringify(item) === JSON.stringify(targetList) && showNav
+                       ? 'bg-header text-darkText hover:text-darkText0.5'
+                       : 'hover:opacity-50'"
+               @click="navType(item)"
+        >
+          <p class="px-[15px] py-[10px] skew-x-[15deg]">
+            {{ index }}
+          </p>
+        </div>
       </div>
+      <ul v-if="showNav"
+          class="bg-header navLine -skew-x-[15deg] right-[26px] before:absolute before:inset-0 before:-right-[26.1px]
+                 before:left-2 before:bg-header before:skew-x-[15deg]"
+      >
+          <li v-for="(item, index) in targetList"
+              :key="index"
+              :class="item === 'SN' ? 'flex items-center justify-start bg-accent text-white my-[12px] relative hover:opacity-75 w-[126px] pl-[32px] ml-[20px]'
+              : 'navItem text-darkText hover:opacity-50'"
+          >
+            <a href="#">
+              <p class="py-[10px] skew-x-[15deg]">
+                {{ item }}
+              </p>
+            </a>
+          </li>
+        </ul>
+
     </nav>
-  </div>
+  </header>
 </template>
 
 <style scoped>
 .textFormat {
-  @apply font-pfdin font-medium text-[14px] text-white leading-[16px] tracking-widest uppercase hover:text-gray-300
+  @apply font-pfdin font-medium text-[14px] text-white leading-[16px] tracking-widest uppercase
 }
 
-.headerSkew {
-  @apply before:ml-auto before:w-[75%] before:mr-[38px] before:absolute  before:z-[-1] before:inset-0 before:bg-header
-         before:-skew-x-[15deg]
+.navLine {
+  @apply relative flex ml-auto w-[75%] mr-[30px]
 }
+
+.navItem {
+  @apply px-[30px] py-[12px] relative cursor-pointer
+}
+
 </style>

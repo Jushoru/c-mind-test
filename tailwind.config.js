@@ -14,7 +14,10 @@ export default {
       // },
       colors: {
         "accent": "#B21F24",
-        "header": "#614D49",
+        "darkHeader": "#614D49",
+        "header": "#E8E1E0",
+        "darkText": "#503D3A",
+        "darkText0.5": "rgba(80,61,58,0.5)",
         "text": "#AA927A",
         "button": "#311311"
       },
