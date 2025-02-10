@@ -12,6 +12,11 @@ export default createRouter({
             path: '/search',
             name: 'search',
             component: () => import('../../c-mind/src/components/views/search.vue'),
+        },
+        {
+            path: '/form',
+            name: 'form',
+            component: () => import('../../c-mind/src/components/views/form.vue'),
         }
     ]
 })

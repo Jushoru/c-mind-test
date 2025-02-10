@@ -20,38 +20,39 @@ const navType = ( item ) => {
 </script>
 
 <template>
-  <header class="sticky top-0 mt-[30px]">
-    <nav class="h-full w-full flex-col textFormat">
-      <div class="flex justify-between bg-darkHeader navLine -skew-x-[15deg] right-[12px] before:absolute before:inset-0 before:-right-[12px]
-                  before:left-[8px] before:bg-darkHeader before:skew-x-[15deg]"
-      >
-        <div class="flex ">
+  <header class="sticky w-full px-[30px] top-0 z-50 ">
+    <nav class="h-full w-full flex-col textFormat overflow-hidden">
+      <div class="flex w-[75%] ml-[26%]">
+        <div class="flex w-[450px] ">
           <div v-for="(item, index) in RouterList"
                :key="index"
-               class="navItem"
+               class="flex justify-center items-center cursor-pointer w-[150px] h-full bg-darkHeader -skew-x-[15deg]"
                :class="JSON.stringify(item) === JSON.stringify(targetList) && showNav
-                       ? 'bg-header text-darkText hover:text-darkText0.5'
+                       ? 'bg-header text-darkText hover:text-darkText1/2'
                        : 'hover:opacity-50'"
                @click="navType(item)"
           >
-            <p class="px-[15px] py-[10px] skew-x-[15deg]">
+            <p class="skew-x-[15deg]">
               {{ index }}
             </p>
           </div>
         </div>
-        <div class="flex items-center skew-x-[15deg]">
-          <button class="bg-button uppercase my-[5px] py-[13px] px-[45.5px] rounded hover:opacity-80">
-            Оставить заявку
-          </button>
-          <a class="uppercase pl-[37px] pr-[28px] hover:opacity-80 cursor-pointer">
-            Контакты
-          </a>
-          <img src="@/assets/icons/search.svg" alt="search" class="cursor-pointer  hover:opacity-50" @click="router.push('/search')">
-          <button class="pl-[28px]  hover:opacity-50 cursor-pointer">
-            EN
-          </button>
+        <div class="w-full bg-darkHeader pr-[35px]">
+          <div class="flex justify-end items-center">
+            <button class="bg-button uppercase my-[5px] py-[13px] px-[45.5px] rounded hover:opacity-80">
+              Оставить заявку
+            </button>
+            <a class="uppercase pl-[37px] pr-[28px] hover:opacity-80 cursor-pointer">
+              Контакты
+            </a>
+            <img src="@/assets/icons/search.svg" alt="search" class="cursor-pointer  hover:opacity-50" @click="router.push('/search')">
+            <button class="pl-[28px] hover:opacity-50 cursor-pointer">
+              EN
+            </button>
+          </div>
         </div>
       </div>
+
       <ul v-if="showNav"
           class="bg-header navLine -skew-x-[15deg] right-[28px] before:absolute before:inset-0 before:-right-[28px]
                  before:left-2 before:bg-header before:skew-x-[15deg] "

@@ -3,12 +3,10 @@ import headerApp from "@/components/app/headerApp.vue";
 </script>
 
 <template>
-  <headerApp/>
-  <div class="w-screen h-screen mb-[30px] pl-[30px] pr-[30px]">
-    <div class="w-auto h-auto bg-black overflow-y-scroll">
-      <div class="w-screen h-screen flex flex-col items-center overflow-hidden">
-        <RouterView />
-      </div>
+  <div class="relative h-screen w-screen pt-[30px]">
+    <headerApp/>
+    <div class="relative w-full h-[80%] pl-[30px] pr-[30px]">
+      <RouterView />
     </div>
   </div>
 </template>
