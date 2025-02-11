@@ -7,7 +7,7 @@ const router = useRouter();
 <template>
   <div class="h-full w-full flex flex-col justify-center items-center textFormat overflow-hidden">
     Это потенциальная страница поиска
-    <button class="mt-6 bg-button uppercase my-[5px] py-[13px] px-[45.5px] rounded hover:opacity-80 text-white text-[14px]"
+    <button class="mt-6 bg-button uppercase my-[5px] py-[13px] px-[45.5px] rounded hover:opacity-80 text-white text-[14px] duration-200"
             @click="router.push('/')"
     >
       На главную

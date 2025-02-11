@@ -14,7 +14,7 @@ export default {
       // },
       colors: {
         "accent": "rgba(178, 31, 36, 1)",
-        "accentHover": "rgba(186, 38, 43, 1)",
+        "accentHover": "rgba(192, 39, 36, 1)",
         "darkHeader": "#614D49",
         "header": "#E8E1E0",
         "darkText": "#503D3A",

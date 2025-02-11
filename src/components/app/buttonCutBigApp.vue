@@ -1,5 +1,5 @@
 <template>
-  <button class="bg-accent -skew-x-[15deg] w-[333px] h-[92px] hover:bg-accentHover"
+  <button class="bg-accent -skew-x-[15deg] w-[333px] h-[92px] hover:bg-accentHover duration-200"
           @click="$emit('open')"
   >
     <span class="textFormat top-[38px] absolute skew-x-[15deg] left-[80px]">
@@ -7,7 +7,8 @@
     </span>
     <img src="@/assets/icons/rightArrow.svg"
          alt="Перейти к форме"
-         class="absolute top-[42px] skew-x-[15deg] left-[260px]">
+         class="absolute top-[42px] skew-x-[15deg] left-[260px]"
+    >
   </button>
 </template>
 
