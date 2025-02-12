@@ -9,6 +9,9 @@ export default {
       'desktop': '1100px',
     },
     extend: {
+      backgroundImage: {
+        'bg1': "url(@/assets/img/bg1.png)",
+      },
       colors: {
         "accent": "rgba(178, 31, 36, 1)",
         "accentHover": "rgba(192, 39, 36, 1)",
