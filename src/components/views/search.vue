@@ -17,6 +17,6 @@ const router = useRouter();
 
 <style scoped>
 .textFormat {
-  @apply font-pfdin font-medium text-[28px] text-darkText leading-[16px] tracking-widest uppercase
+  @apply font-pfdin font-medium text-[28px] text-textDark leading-[16px] tracking-widest uppercase
 }
 </style>

@@ -6,7 +6,7 @@
           Оставить заявку
     </span>
     <img src="@/assets/icons/rightArrow.svg"
-         alt="Перейти к форме"
+         alt="перейти_к_форме"
          class="absolute top-[42px] skew-x-[15deg] left-[260px]"
     >
   </button>

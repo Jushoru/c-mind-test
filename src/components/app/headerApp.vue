@@ -20,7 +20,7 @@ const navType = ( item ) => {
 </script>
 
 <template>
-  <header class="sticky w-full px-[30px] top-0 z-50 overflow-x-hidden">
+  <header class="sticky w-full px-[30px] top-0 z-50">
     <nav class="h-full pl-[20%] flex-col textFormat overflow-x-hidden">
       <div class="flex bg-darkHeader -skew-x-[15deg] w-full ml-[14px]">
         <div class="flex">
@@ -28,7 +28,7 @@ const navType = ( item ) => {
                :key="index"
                class="flex justify-center items-center cursor-pointer w-[150px] bg-darkHeader duration-200"
                :class="JSON.stringify(item) === JSON.stringify(targetList) && showNav
-                       ? 'bg-header text-darkText hover:text-darkText1/2'
+                       ? 'bg-header text-textDark hover:text-textDark1/2'
                        : 'hover:opacity-50'"
                @click="navType(item)"
           >
@@ -46,7 +46,7 @@ const navType = ( item ) => {
               Контакты
             </a>
             <img src="@/assets/icons/search.svg"
-                 alt="search"
+                 alt="поиск"
                  class="cursor-pointer duration-200 hover:opacity-50"
                  @click="router.push('/search')"
             >
@@ -65,7 +65,7 @@ const navType = ( item ) => {
               :key="index"
               :class="item === 'SN'
                 ? 'redBtn bg-accent text-white hover:bg-accentHover w-[126px] pl-[32px] ml-[43px] py-[8px]'
-                : 'redBtn pl-[43px] h-[53px] bg-header text-darkText hover:opacity-50'"
+                : 'redBtn pl-[43px] h-[53px] bg-header text-textDark hover:opacity-50'"
           >
             <a href="#">
               <p class="skew-x-[15deg] ">
