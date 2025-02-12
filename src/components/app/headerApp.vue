@@ -38,7 +38,7 @@ const navType = ( item ) => {
           </div>
         </div>
         <div class="w-full bg-darkHeader pr-[3%]">
-          <div class="flex justify-end items-center skew-x-[15deg] ">
+          <div class="flex justify-end items-center skew-x-[15deg]">
             <button class="bg-button uppercase my-[5px] py-[13px] px-[43px] rounded hover:opacity-80 duration-200">
               Оставить заявку
             </button>

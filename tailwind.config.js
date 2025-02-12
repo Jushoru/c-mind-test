@@ -15,11 +15,12 @@ export default {
       colors: {
         "accent": "rgba(178, 31, 36, 1)",
         "accentHover": "rgba(192, 39, 36, 1)",
-        "darkHeader": "#614D49",
+        "darkHeader": "rgba(97, 77, 73, 1)",
         "header": "#E8E1E0",
-        "darkText": "#503D3A",
+        "mainBlock": "rgba(242, 242, 242, 1)",
+        "darkText": "rgb(80, 61, 58, 1)",
         "darkText1/2": "rgba(80,61,58,0.5)",
-        "text": "#AA927A",
+        "text": "rgba(170, 146, 122, 1)",
         "button": "#311311",
       },
       textUnderlineOffset: {

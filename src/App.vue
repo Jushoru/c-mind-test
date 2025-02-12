@@ -3,10 +3,10 @@ import headerApp from "@/components/app/headerApp.vue";
 </script>
 
 <template>
-  <div class="flex justify-center">
-    <div class="h-screen w-screen max-w-[2000px] pt-[30px] overflow-x-hidden">
+  <div class="flex justify-center ">
+    <div class="h-screen w-screen max-w-[2000px] overflow-x-hidden pt-[30px]">
       <headerApp/>
-      <div class="relative w-full h-[80%] pl-[30px] pr-[30px]">
+      <div class="relative w-full h-[80%]">
         <RouterView />
       </div>
     </div>
