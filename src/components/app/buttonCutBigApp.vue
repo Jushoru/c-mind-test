@@ -14,6 +14,6 @@
 
 <style scoped>
 .textFormat {
-  @apply text-white text-[16px] font-pfdin font-medium leading-[19px] uppercase tracking-widest
+  @apply text-white text-[16px] font-pfdin font-medium leading-[19px] uppercase tracking-wider
 }
 </style>

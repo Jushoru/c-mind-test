@@ -1,5 +1,8 @@
 <script setup>
 import ButtonCutApp from "@/components/app/buttonCutApp.vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 defineProps({
   isTextRight: {
@@ -24,13 +27,13 @@ defineProps({
   <div class="relative min-w-[56.8%] h-min overflow-x-hidden">
     <slot/>
     <div class="absolute z-30 bottom-0 -right-2 ">
-      <ButtonCutApp/>
+      <ButtonCutApp @open="router.push('#')"/>
     </div>
   </div>
   <div class="flex flex-col flex-grow"
        :class="isTextRight ? 'ml-[40px]' : 'mr-[40px]'"
   >
-    <h5>{{ title }}</h5>
+    <h4>{{ title }}</h4>
     <p class="mt-[16px]">
       {{ text }}
     </p>
@@ -38,8 +41,8 @@ defineProps({
 </div>
 </template>
 <style scoped>
-h5 {
-  @apply text-[28px] font-medium leading-[34px] font-pfdin tracking-widest uppercase text-textDarkest
+h4 {
+  @apply text-[28px] font-medium leading-[34px] font-pfdin tracking-wider uppercase text-textDarkest
 }
 
 p {

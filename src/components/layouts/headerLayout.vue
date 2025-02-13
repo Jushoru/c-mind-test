@@ -45,7 +45,7 @@ const navType = ( item ) => {
             <a class="uppercase pl-[37px] pr-[28px] hover:opacity-80 cursor-pointer duration-200">
               Контакты
             </a>
-            <img src="@/assets/icons/search.svg"
+            <img src="../../assets/icons/search.svg"
                  alt="поиск"
                  class="cursor-pointer duration-200 hover:opacity-50"
                  @click="router.push('/search')"
@@ -81,7 +81,7 @@ const navType = ( item ) => {
 
 <style scoped>
 .textFormat {
-  @apply font-pfdin font-medium text-[14px] text-white leading-[16px] tracking-widest uppercase
+  @apply font-pfdin font-medium text-[14px] text-white leading-[16px] tracking-wider uppercase
 }
 
 .redBtn {
