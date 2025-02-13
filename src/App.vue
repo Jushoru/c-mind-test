@@ -5,11 +5,9 @@ import HeaderLayout from "@/components/layouts/headerLayout.vue";
 
 <template>
   <div class="w-screen pt-[30px]">
-    <HeaderLayout/>
-    <div class="w-screen h-screen">
-      <div class="relative w-full h-[80%]">
+      <div class="flex flex-col items-center justify-center w-full h-[80%]">
+        <HeaderLayout/>
         <RouterView />
       </div>
-    </div>
   </div>
 </template>

@@ -26,7 +26,7 @@ defineProps({
 >
   <div class="relative min-w-[56.8%] h-min overflow-x-hidden">
     <slot/>
-    <div class="absolute z-30 bottom-0 -right-2 ">
+    <div class="absolute z-30 bottom-[15px] -right-2">
       <ButtonCutApp @open="router.push('#')"/>
     </div>
   </div>

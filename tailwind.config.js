@@ -6,12 +6,18 @@ export default {
   ],
   theme: {
     screens: {
-      'desktop': '1100px',
+      'desktop': '1280px',
+      'tablet': '768px',
+      'mobile': '375px'
     },
     extend: {
       backgroundImage: {
         'bg1': "url(@/assets/img/bg1.png)",
+        'bg1desktop': "url(@/assets/img/bg1desktop.png)",
+        'bg1mobile': "url(@/assets/img/bg1mobile.png)",
         'bg2': "url(@/assets/img/bg2.png)",
+        'bg2desktop': "url(@/assets/img/bg2desktop.png)",
+        'bg2mobile': "url(@/assets/img/bg2mobile.png)",
       },
       colors: {
         "accent": "rgba(178, 31, 36, 1)",

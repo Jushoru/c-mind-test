@@ -10,21 +10,21 @@ const router = useRouter();
 
 <template>
   <div class="flex flex-col items-center w-full">
-    <div class="relative flex w-full max-w-[1629px] max-h-[860px] justify-center items-center px-[30px] overflow-hidden">
+    <div class="relative flex w-full max-w-[1629px] max-h-[860px] justify-center items-center px-[36px] overflow-hidden">
       <video src="@/assets/videos/video1.mp4" muted autoplay loop
              width="100%"
              poster="@/assets/img/poster.png"
              preload="metadata"
              class="rounded-[4px]"
       ></video>
-      <div class="absolute z-30 w-[353px] bottom-[-2px] right-[30px] overflow-hidden">
+      <div class="absolute z-30 w-[353px] bottom-[-2px] right-[36px] overflow-hidden">
         <ButtonCutBigApp class="ml-[33px]" @open="router.push('/form')" />
         <div class="bg-white ml-[16px] -skew-x-[15deg] w-[343px] h-[37px]"/>
       </div>
     </div>
 
     <div class="bg-mainBlock w-full flex flex-col items-center mt-[130px]">
-      <div class="w-full max-w-[1629px] h-full px-[30px] py-[101px] ">
+      <div class="w-full max-w-[1629px] h-full px-[36px] py-[101px] ">
         <div class="flex items-center">
           <h2 class="min-w-max text-accent">
             Lorem ipsum,
@@ -38,6 +38,7 @@ const router = useRouter();
           Lorem Ipsum компании  разработано с учётом анализа передовых технологий, использованием лучших решений и их качественной модернизации под потребности конкретного заказчика. Успешная реализация проектов на ведущих предприятиях горно-обогатительной промышленности базируется на многолетнем опыте и высоких компетенциях наших сотрудников.
         </p>
         <MiniArticleLayout>
+
           <img src="@/assets/img/article1.png"
                alt="картинка_статьи_1"
                width="926" height="475"
@@ -52,7 +53,8 @@ const router = useRouter();
       </div>
     </div>
 
-    <div class="relative flex flex-col w-full max-w-[1629px] h-[860px] justify-start items-start overflow-hidden mt-[130px] bg-bg1 pt-[67px] pl-[69px]">
+    <div class="relative flex flex-col w-full desktop:max-w-[1629px] mobile:max-w-[1023px] max-w-[375px] desktop:h-[860px]
+                mobile:h-[509px] h-[649px] justify-start items-start overflow-hidden mt-[130px] desktop:bg-bg1 mobile:bg-bg1desktop bg-bg1mobile pt-[67px] pl-[69px]">
       <h1>SN</h1>
       <p class="paragraph max-w-[584px] text-white">Помогает повысить извлечение за счет поддержания оптимальных дозировок реагентов в ключевых точках процесса</p>
       <div class="absolute z-30 w-[353px] bottom-[-2px] right-0 overflow-hidden">
@@ -61,7 +63,7 @@ const router = useRouter();
       </div>
     </div>
 
-    <div class="w-full max-w-[1629px] px-[30px] my-[130px]">
+    <div class="w-full max-w-[1629px] px-[36px] my-[130px]">
       <div class="w-full bg-bg2 h-[383px] rounded-[4px] flex items-center pl-[73px]">
         <div class="w-[680px] h-[218px] flex flex-col items-start justify-start">
           <h3>Мы реализуем под ключ проекты любой сложности</h3>
