@@ -1,19 +1,19 @@
 <template>
-  <button class="w-[249px] h-[61px] bg-accent hover:bg-accentHover duration-200 -skew-x-[15deg]"
+  <button class="desktop:w-[249px] w-[185px] desktop:h-[61px] h-[44px] bg-accent hover:bg-accentHover duration-200 -skew-x-[15deg]"
           @click="$emit('open')"
   >
-    <span class="absolute textFormat skew-x-[15deg] left-[60px] top-[24px]">
+    <span class="absolute textFormat skew-x-[15deg] desktop:left-[60px] left-[30px] desktop:top-[24px] top-[15px]">
           Оставить заявку
     </span>
     <img src="@/assets/icons/rightArrow.svg"
          alt="перейти_к_форме"
-         class="absolute top-[27px] skew-x-[15deg] left-[205px]"
+         class="absolute desktop:top-[27px] top-[19px] skew-x-[15deg] desktop:left-[205px] left-[145px]"
     >
   </button>
 </template>
 
 <style scoped>
 .textFormat {
-  @apply text-white font-pfdin font-medium uppercase tracking-wider text-[14px] leading-[16.8px]
+  @apply text-white font-pfdin font-medium uppercase tracking-wider desktop:text-[14px] text-[12px] desktop:leading-[16.8px] leading-[14.4px]
 }
 </style>

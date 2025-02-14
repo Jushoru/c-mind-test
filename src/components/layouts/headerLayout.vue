@@ -42,8 +42,8 @@ const toggleCategory = (category) => {
 </script>
 
 <template>
-  <header class="sticky w-full px-[36px] top-[-1px] z-50 max-w-[1628px]">
-    <nav class="h-full desktop:pl-[287px] miniPhone:pl-[167px] pl-[118px] flex-col textFormat overflow-x-hidden">
+  <header class="sticky w-full desktop:px-[36px] mobile:px-[30px] px-[12px] top-[-1px] z-50 max-w-[1628px]">
+    <nav class="h-full desktop:pl-[287px] miniPhone:pl-[167px] pl-[52px] flex-col textFormat overflow-x-hidden">
       <div class="flex bg-darkHeader -skew-x-[15deg] w-full ml-[14px]">
         <div v-if="screenWidth >= 868"
              class="flex"
@@ -107,7 +107,7 @@ const toggleCategory = (category) => {
       </transition>
 
       <transition name="slide-fade">
-        <div v-show="isOpen" class="absolute top-[52px] right-[36px] w-60 bg-darkHeader shadow-lg z-50">
+        <div v-show="isOpen" class="absolute top-[52px] desktop:right-[36px] mobile:right-[30px] right-[12px] w-60 bg-darkHeader shadow-lg z-50">
           <ul class="flex flex-col textFormat">
             <li v-for="(items, category) in RouterList" :key="category">
               <button @click="toggleCategory(category)" class="w-full text-left p-3 hover:opacity-70 uppercase">

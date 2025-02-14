@@ -6,12 +6,17 @@ const router = useRouter();
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center w-full px-[30px]">
-    <footer class="gradientLine h-[870px] flex flex-col justify-center items-center w-full max-w-[1569px] ">
-      <div class="flex justify-end w-full h-[822px] pt-[93px]">
-        <div class="flex justify-between w-[1311px] ">
-          <div class="w-[803px] grid grid-cols-3">
-            <div class="max-w-[203px]">
+  <div class="flex flex-col items-center justify-center w-full desktop:px-[36px] mobile:px-[30px] px-[12px]
+              desktop:mb-[17px] mobile:mb-[14px] mb-[60px]">
+    <footer class="gradientLine flex flex-col justify-center items-center w-full max-w-[1569px] "
+    >
+      <div class="flex desktop:flex-row flex-col desktop:justify-end justify-center desktop:items-start
+                  mobile:items-start items-center w-full desktop:mb-[230px] mb-10 pt-[93px]"
+      >
+        <div class="desktop:w-[803px] mobile:w-full w-full desktop:grid-cols-3 desktop:grid mobile:grid
+                    mobile:grid-cols-3 flex flex-col"
+        >
+            <div class="min-w-[203px] mx-auto">
               <h5>Товары</h5>
               <hr class="gradientLine my-5"/>
               <h6>Флотомашины и Чаны</h6>
@@ -45,7 +50,7 @@ const router = useRouter();
               </ul>
             </div>
 
-            <div class="max-w-[203px]">
+            <div class="min-w-[203px] mx-auto desktop:mt-0 mobile:mt-0 mt-10">
               <h5>Услуги</h5>
               <hr class="gradientLine my-5 "/>
               <ul class="pb-[20px]">
@@ -60,7 +65,7 @@ const router = useRouter();
               </ul>
             </div>
 
-            <div class="max-w-[203px]">
+            <div class="min-w-[203px] mx-auto desktop:mt-0 mobile:mt-0 mt-10">
               <h5>Компания</h5>
               <hr class="gradientLine my-5 "/>
               <ul class="pb-[20px]">
@@ -72,26 +77,34 @@ const router = useRouter();
               <h6>Контакты</h6>
             </div>
           </div>
-          <div class="flex flex-col w-[406px] h-min px-[27px] pt-[37px] pb-[43px] bg-mainBlock">
-            <div class="relative flex w-full items-start">
-              <a class="relative w-full h-[50px] font-pfdin font-normal text-[20px] leading-[25px] text-button hover:opacity-65 duration-200" href="https://yandex.ru/maps/-/CHqzE-~m">
+        <div class="flex desktop:flex-col mobile:flex-row flex-col desktop:w-[406px] w-full desktop:mt-0 mt-[82px]
+                    h-min px-[27px] pt-[37px] pb-[43px] bg-mainBlock mobile:items-center">
+            <div class="relative flex justify-center desktop:w-full w-full ">
+              <a class="relative w-full desktop:h-[50px] h-[75px] font-pfdin font-normal text-[20px] leading-[25px]
+                        text-button hover:opacity-65 duration-200 "
+                 href="https://yandex.ru/maps/-/CHqzE-~m"
+              >
                 <img class="absolute left-0 top-0" src="@/assets/icons/address.svg" alt=""/>
-                <span class="absolute left-[42px] top-0 w-full">
-                г. Санкт-Петербург, 119186, Большой проспект Васильевского острова, дом 7. Литера З
-              </span>
+                <span class="absolute left-[42px] top-0 desktop:w-full">
+                  г. Санкт-Петербург, 119186, Большой проспект Васильевского острова, дом 7. Литера З
+                </span>
               </a>
             </div>
-            <span class="pl-[44px] pt-[13px] font-pfdin font-medium text-[20px] leading-[24px] text-button">
-            +7 (---) 5-5-05-11
-          </span>
-            <span class="pl-[44px] pt-[13px] font-pfdin font-normal text-[20px] leading-[25px] text-button">
-            info@info.ru
-          </span>
-            <ButtonApp class="ml-[44px] mt-[45px]" @open="router.push('#')"/>
-          </div>
+            <div class="mobile:flex mobile:w-[365.5px]">
+              <div class="flex desktop:flex-col mobile:flex-col w-full mobile:min-w-[163px] desktop:ml-[44px] mobile:ml-[38.5px]">
+                <span class="desktop:pt-[13px] mobile:pt-[0px] pt-[13px] font-pfdin font-medium text-[20px] leading-[24px] text-button">
+                  +7 (---) 5-5-05-11
+                </span>
+                <span class="pt-[13px] font-pfdin font-normal text-[20px] leading-[25px] text-button desktop:ml-0 mobile:ml-0 ml-3">
+                  info@info.ru
+                </span>
+            </div>
+
+            </div>
+            <ButtonApp class="desktop:ml-[44px] desktop:mt-[45px] mobile:mt-0 mt-[32px] mobile:min-w-[195px]" @open="router.push('#')"/>
         </div>
       </div>
-      <p class="font-pfdin font-normal text-[16px] leading-[20.19px] text-darkHeader">
+      <p class="font-pfdin font-normal text-[16px] leading-[20.19px] text-darkHeader mobile:mt-[201px]">
         Сделано в <span class="text-accent">Creative Mind Bureau</span>
       </p>
     </footer>
