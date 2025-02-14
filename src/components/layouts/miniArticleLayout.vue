@@ -21,12 +21,12 @@ defineProps({
 </script>
 
 <template>
-<div class="flex w-full mt-[89px]"
-     :class="isTextRight ? '' : 'flex-row-reverse'"
+<div class="flex w-full mt-[89px] desktop:flex-row mobile:flex-row flex-col-reverse"
+     :class="isTextRight ? '' : 'desktop:flex-row-reverse mobile:flex-row-reverse'"
 >
   <div class="relative min-w-[56.8%] h-min overflow-x-hidden">
     <slot/>
-    <div class="absolute z-30 bottom-[15px] -right-2">
+    <div class="absolute z-30 desktop:bottom-[42px] mobile:bottom-[15px] -right-2">
       <ButtonCutApp @open="router.push('#')"/>
     </div>
   </div>

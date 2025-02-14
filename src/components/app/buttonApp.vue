@@ -7,7 +7,7 @@
     </span>
     <img src="@/assets/icons/rightArrow.svg"
          alt="перейти_к_форме"
-         class="absolute desktop:top-[27px] top-[19px] skew-x-[15deg] desktop:left-[205px] left-[145px]"
+         class="absolute desktop:top-[27px] top-[17px] skew-x-[15deg] desktop:left-[205px] left-[145px]"
     >
   </button>
 </template>

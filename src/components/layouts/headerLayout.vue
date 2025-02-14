@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -11,6 +11,8 @@ const RouterList = {
 const targetList = ref(RouterList['Товары'])
 const showNav = ref(false)
 const screenWidth = ref(window.innerWidth)
+const isOpen = ref(false);
+const activeCategory = ref(null);
 
 const navType = ( item ) => {
   if (JSON.stringify(targetList.value) === JSON.stringify(item) || showNav.value === false) {
@@ -21,15 +23,8 @@ const navType = ( item ) => {
 
 const updateWidth = () => {
   screenWidth.value = window.innerWidth
+  isOpen.value = false
 }
-
-onMounted(() => {
-      window.addEventListener('resize', updateWidth)
-    }
-)
-
-const isOpen = ref(false);
-const activeCategory = ref(null);
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
@@ -39,6 +34,14 @@ const toggleMenu = () => {
 const toggleCategory = (category) => {
   activeCategory.value = activeCategory.value === category ? null : category;
 };
+
+onMounted(() => {
+  window.addEventListener('resize', updateWidth);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateWidth);
+});
 </script>
 
 <template>
@@ -63,7 +66,8 @@ const toggleCategory = (category) => {
         </div>
         <div class="w-full bg-darkHeader pr-[35px]">
           <div class="flex justify-end items-center skew-x-[15deg] ml-[10px]">
-            <button class="bg-button uppercase my-[5px] h-[43px] desktop:w-[201px] mobile:w-[158px] w-[106px] rounded hover:opacity-80 duration-200">
+            <button class="bg-button uppercase desktop:my-[5px] mobile:my-[5px] my-[11px] desktop:h-[43px] mobile:h-[43px] h-[38px] desktop:w-[201px] mobile:w-[158px] w-[106px] rounded
+                           hover:opacity-80 duration-200 ">
               Оставить заявку
             </button>
             <a v-if="screenWidth >= 868" class="uppercase pl-[28px]  hover:opacity-80 cursor-pointer duration-200">
@@ -128,7 +132,8 @@ const toggleCategory = (category) => {
 
 <style scoped>
 .textFormat {
-  @apply font-pfdin font-medium text-[14px] text-white leading-[16px] tracking-wider uppercase
+  @apply font-pfdin desktop:font-medium mobile:font-medium font-normal desktop:text-[14px] mobile:text-[14px] text-[12px]
+         text-white desktop:leading-[16px] mobile:leading-[16px] leading-[14px] tracking-wider uppercase
 }
 
 .redBtn {
