@@ -4,24 +4,42 @@ import ButtonApp from "@/components/app/buttonApp.vue";
 import MiniArticleLayout from "@/components/layouts/miniArticleLayout.vue";
 import { useRouter } from "vue-router";
 import FooterLayout from "@/components/layouts/footerLayout.vue";
+import {onMounted, onUnmounted, ref} from "vue";
 
 const router = useRouter();
+const screenWidth = ref(window.innerWidth)
+const updateWidth = () => {
+  screenWidth.value = window.innerWidth
+}
+onMounted(() => {
+  window.addEventListener('resize', updateWidth);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateWidth);
+});
 </script>
 
 <template>
-  <div class="flex flex-col items-center w-full">
+  <div class="flex flex-col items-center w-full overflow-x-hidden">
     <div class="relative flex w-full max-w-[1629px] max-h-[860px] justify-center items-center desktop:px-[36px]
-                mobile:px-[30px] px-[12px] overflow-hidden"
+                mobile:px-[30px] px-[12px] overflow-hidden mt-[-1px]"
     >
       <video src="@/assets/videos/video1.mp4" muted autoplay loop
              width="100%"
              poster="@/assets/img/poster.png"
              preload="metadata"
-             class="rounded-[4px]"
+             class="desktop:rounded-[4px] mobile:rounded-[4px]"
       ></video>
-      <div class="absolute z-30 w-[353px] bottom-[-2px] desktop:right-[36px] mobile:right-[30px] right-[12px] overflow-hidden">
-        <ButtonCutBigApp class="ml-[33px]" @open="router.push('/form')" />
-        <div class="bg-white ml-[16px] -skew-x-[15deg] w-[343px] h-[37px]"/>
+      <div class="absolute z-30 desktop:w-[353px] mobile:w-[260px] w-[232px] bottom-[-2px]
+                  desktop:right-[36px] mobile:right-[30px] right-[12px] desktop:overflow-hidden mobile:overflow-hidden overflow-hidden">
+        <ButtonCutBigApp class="desktop:ml-[33px] mobile:ml-[33px] ml-[40px]" @open="router.push('/form')">
+          <img src="@/assets/icons/rightArrow.svg"
+               alt="перейти_к_форме"
+               class="absolute desktop:top-[42px] mobile:top-[20px] top-[16px] skew-x-[15deg] desktop:left-[240px] mobile:left-[190px] left-[165px]"
+          >
+        </ButtonCutBigApp>
+        <div v-if="screenWidth >= 868" class="bg-white desktop:ml-[16px] mobile:ml-[22px] -skew-x-[15deg] desktop:w-[343px] mobile:w-[243px] h-[37px]"/>
       </div>
     </div>
 
@@ -31,7 +49,7 @@ const router = useRouter();
           <h2 class="min-w-max text-accent">
             Lorem ipsum,
           </h2>
-          <hr class="flex flex-grow border-1 border-text ml-[180px] bg-text"/>
+          <hr class="flex flex-grow border-1 border-text desktop:ml-[180px] mobile:ml-[140px] ml-[80px] bg-text"/>
         </div>
         <h2 class="text-darkHeader">
           Lorem ipsum Lorem ipsum
@@ -62,9 +80,14 @@ const router = useRouter();
                 bg-bg1 desktop:pt-[67px] mobile:pt-[40px] pt-[60px] desktop:pl-[69px] mobile:pl-[40px] pl-[12px]"
     >
       <h1>SN</h1>
-      <p class="paragraph desktop:max-w-[584px] mobile:max-w-[360px] w-[351px] text-white">Помогает повысить извлечение за счет поддержания оптимальных дозировок реагентов в ключевых точках процесса</p>
+      <p class="paragraph desktop:max-w-[584px] mobile:max-w-[360px] max-w-[351px] text-white">Помогает повысить извлечение за счет поддержания оптимальных дозировок реагентов в ключевых точках процесса</p>
       <div class="absolute z-30 desktop:w-[373px] mobile:w-[225px] w-[200px] bottom-[-2px] right-0 overflow-hidden">
-        <ButtonCutBigApp class="ml-[33px]" @open="router.push('#')" text="Подробнее"/>
+        <ButtonCutBigApp class="ml-[33px]" @open="router.push('#')" text="Подробнее">
+          <img src="@/assets/icons/rightArrow.svg"
+               alt="перейти_к_форме"
+               class="absolute desktop:top-[42px] mobile:top-[20px] top-[16px] skew-x-[15deg] desktop:left-[240px] mobile:left-[155px] left-[120px]"
+          >
+        </ButtonCutBigApp>
         <div class="bg-white desktop:ml-[16px] mobile:ml-[22px] -skew-x-[15deg] desktop:w-[373px] mobile:w-[212px] desktop:h-[37px] mobile:h-[30px] h-0"/>
       </div>
     </div>
@@ -89,13 +112,13 @@ h1 {
   @apply hDefault desktop:text-[80px] mobile:text-[47px] text-[40px] desktop:leading-[96px] mobile:leading-[56.4px] leading-[48px] text-white
 }
 h2 {
-  @apply hDefault text-[66px] leading-[79px]
+  @apply hDefault desktop:text-[66px] mobile:text-[47px] text-[40px] desktop:leading-[79px] mobile:leading-[56.4px] leading-[48px]
 }
 h3 {
   @apply hDefault desktop:text-[50px] mobile:text-[47px] text-[32px] desktop:leading-[60px] mobile:leading-[56.4px] leading-[38.4px] text-white
 }
 .paragraph {
-  @apply pt-[39px] font-pfdin font-normal desktop:text-[28px] mobile:text-[16px] text-[20px] desktop:leading-[33.6px] mobile:leading-[20.19px] leading-[24px]
+  @apply desktop:pt-[40x] mobile:pt-5 pt-[60px] font-pfdin font-normal desktop:text-[28px] mobile:text-[16px] text-[20px] desktop:leading-[33.6px] mobile:leading-[20.19px] leading-[24px]
 }
 </style>
 
