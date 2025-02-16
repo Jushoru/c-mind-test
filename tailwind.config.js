@@ -7,7 +7,8 @@ export default {
   theme: {
     screens: {
       'desktop': '1280px',
-      'mobile': '868px'
+      'tablet': '868px',
+      'mobile': '400px'
     },
     extend: {
       backgroundImage: {
@@ -29,6 +30,7 @@ export default {
         "text": "rgba(170, 146, 122, 1)",
         "textArticle": "rgba(124, 110, 107, 1)",
         "button": "rgba(49, 19, 17, 1)",
+        "buttonDisabled": "rgba(207, 207, 207, 1)",
         "gradientFrom": "rgba(235, 232, 229, 1)",
         "gradientTo": "rgba(211, 200, 187, 1)",
       },

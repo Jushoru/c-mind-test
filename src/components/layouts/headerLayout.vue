@@ -45,7 +45,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header class="sticky w-full desktop:px-[36px] mobile:px-[30px] px-[12px] top-[-1px] z-50 max-w-[1628px] ">
+  <header class="sticky w-full desktop:px-[36px] tablet:px-[30px] px-[12px] top-[-1px] z-50 max-w-[1628px] ">
     <nav class="h-full desktop:pl-[287px] miniPhone:pl-[167px] pl-[52px] flex-col textFormat overflow-x-hidden">
       <div class="flex bg-darkHeader -skew-x-[15deg] w-full ml-[14px]">
         <div v-if="screenWidth >= 868"
@@ -66,7 +66,7 @@ onUnmounted(() => {
         </div>
         <div class="w-full bg-darkHeader pr-[35px]">
           <div class="flex justify-end items-center skew-x-[15deg] ml-[10px]">
-            <button class="bg-button uppercase desktop:my-[5px] mobile:my-[5px] my-[11px] desktop:h-[43px] mobile:h-[43px] h-[38px] desktop:w-[201px] mobile:w-[158px] w-[106px] rounded
+            <button class="bg-button uppercase desktop:my-[5px] tablet:my-[5px] my-[11px] desktop:h-[43px] tablet:h-[43px] h-[38px] desktop:w-[201px] tablet:w-[158px] w-[106px] rounded
                            hover:opacity-80 duration-200 ">
               Оставить заявку
             </button>
@@ -111,7 +111,7 @@ onUnmounted(() => {
       </transition>
 
       <transition name="slide-fade">
-        <div v-show="isOpen" class="absolute top-[52px] desktop:right-[36px] mobile:right-[30px] right-[12px] min-w-[170px] bg-darkHeader shadow-lg z-50">
+        <div v-show="isOpen" class="absolute top-[52px] desktop:right-[36px] tablet:right-[30px] right-[12px] min-w-[170px] bg-darkHeader shadow-lg z-50">
           <ul class="flex flex-col textFormat">
             <li v-for="(items, category) in RouterList" :key="category">
               <button @click="toggleCategory(category)" class="w-full text-left p-3 hover:opacity-70 uppercase">
@@ -132,8 +132,8 @@ onUnmounted(() => {
 
 <style scoped>
 .textFormat {
-  @apply font-pfdin desktop:font-medium mobile:font-medium font-normal desktop:text-[14px] mobile:text-[14px] text-[12px]
-         text-white desktop:leading-[16px] mobile:leading-[16px] leading-[14px] tracking-wider uppercase
+  @apply font-pfdin desktop:font-medium tablet:font-medium font-normal desktop:text-[14px] tablet:text-[14px] text-[12px]
+         text-white desktop:leading-[16px] tablet:leading-[16px] leading-[14px] tracking-wider uppercase
 }
 
 .redBtn {

@@ -7,12 +7,12 @@ defineProps({
 })
 </script>
 <template>
-  <button class="bg-accent -skew-x-[15deg] desktop:w-[373px] mobile:w-[235px] w-[200px] desktop:h-[92px] mobile:h-[50px] h-[44px]
+  <button class="bg-accent -skew-x-[15deg] desktop:w-[373px] tablet:w-[235px] w-[200px] desktop:h-[92px] tablet:h-[50px] h-[44px]
                  hover:bg-accentHover duration-200 overflow-hidden"
           @click="$emit('open')"
   >
-    <span class="textFormat desktop:top-[38px] mobile:top-[18px] top-[13px] absolute skew-x-[15deg] desktop:left-[80px]
-                 mobile:left-[68px] left-[49px]"
+    <span class="textFormat desktop:top-[38px] tablet:top-[18px] top-[13px] absolute skew-x-[15deg] desktop:left-[80px]
+                 tablet:left-[68px] left-[49px]"
     >
       {{ text }}
     </span>
@@ -22,6 +22,6 @@ defineProps({
 
 <style scoped>
 .textFormat {
-  @apply text-white desktop:text-[16px] mobile:text-[12px] text-[12px] font-pfdin font-medium desktop:leading-[19px] mobile:leading-[14.4px] leading-[14.4px] uppercase tracking-wider
+  @apply text-white desktop:text-[16px] tablet:text-[12px] text-[12px] font-pfdin font-medium desktop:leading-[19px] tablet:leading-[14.4px] leading-[14.4px] uppercase tracking-wider
 }
 </style>

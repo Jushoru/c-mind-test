@@ -21,20 +21,20 @@ defineProps({
 </script>
 
 <template>
-<div class="flex w-full desktop:mt-[89px] mobile:mt-[40px] mt-[40px] desktop:flex-row mobile:flex-row flex-col-reverse"
-     :class="isTextRight ? '' : 'desktop:flex-row-reverse mobile:flex-row-reverse'"
+<div class="flex w-full desktop:mt-[89px] tablet:mt-[40px] mt-[40px] desktop:flex-row tablet:flex-row flex-col-reverse"
+     :class="isTextRight ? '' : 'desktop:flex-row-reverse tablet:flex-row-reverse'"
 >
   <div class="relative min-w-[56.8%] h-min overflow-x-hidden">
     <slot/>
-    <div class="absolute z-30 desktop:bottom-[42px] mobile:bottom-[15px] bottom-0 -right-2">
+    <div class="absolute z-30 desktop:bottom-[42px] tablet:bottom-[15px] bottom-0 -right-2">
       <ButtonCutApp @open="router.push('#')"/>
     </div>
   </div>
   <div class="flex flex-col flex-grow"
-       :class="isTextRight ? 'desktop:ml-[40px] mobile:ml-[40px] ml-0' : 'desktop:mr-40px] mobile:mr-[40px] mr-0'"
+       :class="isTextRight ? 'desktop:ml-[40px] tablet:ml-[40px] ml-0' : 'desktop:mr-40px] tablet:mr-[40px] mr-0'"
   >
     <h4>{{ title }}</h4>
-    <p class="mt-[16px] desktop:mb-0 mobile:mb-0 mb-5">
+    <p class="mt-[16px] desktop:mb-0 tablet:mb-0 mb-5">
       {{ text }}
     </p>
   </div>

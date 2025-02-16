@@ -6,16 +6,16 @@ const router = useRouter();
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center w-full desktop:px-[36px] mobile:px-[30px] px-[12px]
-              desktop:mb-[17px] mobile:mb-[14px] mb-[60px]">
+  <div class="flex flex-col items-center justify-center w-full desktop:px-[36px] tablet:px-[30px] px-[12px]
+              desktop:mb-[17px] tablet:mb-[14px] mb-[60px]">
     <footer class="gradientLine flex flex-col justify-center items-center w-full max-w-[1569px] "
     >
       <div class="flex desktop:flex-row flex-col desktop:justify-end justify-center desktop:items-start
-                  mobile:items-start items-center w-full desktop:mb-[230px] mb-10 pt-[93px]"
+                  tablet:items-start items-center w-full desktop:mb-[230px] mb-10 pt-[93px]"
       >
-        <div class="desktop:w-[803px] mobile:w-full w-full desktop:grid-cols-3 desktop:grid mobile:grid
-                    mobile:grid-cols-3 flex flex-col"
-        >
+        <div class="w-full tablet:w-full desktop:w-[803px] max-w-[803px] grid grid-cols-1 tablet:grid-cols-3
+                    desktop:ml-auto desktop:mr-0 ml-auto mr-auto">
+
             <div class="min-w-[203px] mx-auto">
               <h5>Товары</h5>
               <hr class="gradientLine my-5"/>
@@ -50,7 +50,7 @@ const router = useRouter();
               </ul>
             </div>
 
-            <div class="min-w-[203px] mx-auto desktop:mt-0 mobile:mt-0 mt-10">
+            <div class="min-w-[203px] mx-auto desktop:mt-0 tablet:mt-0 mt-10">
               <h5>Услуги</h5>
               <hr class="gradientLine my-5 "/>
               <ul class="pb-[20px]">
@@ -65,7 +65,7 @@ const router = useRouter();
               </ul>
             </div>
 
-            <div class="min-w-[203px] mx-auto desktop:mt-0 mobile:mt-0 mt-10">
+            <div class="min-w-[203px] mx-auto desktop:mt-0 tablet:mt-0 mt-10">
               <h5>Компания</h5>
               <hr class="gradientLine my-5 "/>
               <ul class="pb-[20px]">
@@ -77,8 +77,9 @@ const router = useRouter();
               <h6>Контакты</h6>
             </div>
           </div>
-        <div class="flex desktop:flex-col mobile:flex-row flex-col desktop:w-[406px] w-full desktop:mt-0 mt-[82px]
-                    h-min px-[27px] pt-[37px] pb-[43px] bg-mainBlock mobile:items-center">
+        <div class="flex desktop:flex-col tablet:flex-row desktop:w-[406px] w-full desktop:mt-0 mt-[82px]
+                    h-min px-[27px] pt-[37px] pb-[43px] bg-mainBlock tablet:items-center"
+        >
             <div class="relative flex justify-center desktop:w-full w-full ">
               <a class="relative w-full desktop:h-[50px] h-[75px] font-pfdin font-normal text-[20px] leading-[25px]
                         text-button hover:opacity-65 duration-200 "
@@ -90,21 +91,20 @@ const router = useRouter();
                 </span>
               </a>
             </div>
-            <div class="mobile:flex mobile:w-[365.5px]">
-              <div class="flex desktop:flex-col mobile:flex-col w-full mobile:min-w-[163px] desktop:ml-[44px] mobile:ml-[38.5px]">
-                <span class="desktop:pt-[13px] mobile:pt-[0px] pt-[13px] font-pfdin font-medium text-[20px] leading-[24px] text-button">
+            <div class="tablet:flex tablet:w-[365.5px]">
+              <div class="flex desktop:flex-col tablet:flex-col w-full tablet:min-w-[163px] desktop:ml-[44px] tablet:ml-[38.5px]">
+                <span class="desktop:pt-[13px] tablet:pt-[0px] pt-[13px] font-pfdin font-medium text-[20px] leading-[24px] text-button">
                   +7 (---) 5-5-05-11
                 </span>
-                <span class="pt-[13px] font-pfdin font-normal text-[20px] leading-[25px] text-button desktop:ml-0 mobile:ml-0 ml-3">
+                <span class="pt-[13px] font-pfdin font-normal text-[20px] leading-[25px] text-button desktop:ml-0 tablet:ml-0 ml-3">
                   info@info.ru
                 </span>
+              </div>
             </div>
-
-            </div>
-            <ButtonApp class="desktop:ml-[44px] desktop:mt-[45px] mobile:mt-0 mt-[32px] mobile:min-w-[195px]" @open="router.push('#')"/>
+            <ButtonApp class="desktop:ml-[-44px] desktop:mt-[45px] tablet:mt-0 mt-[32px] tablet:min-w-[195px]" @open="router.push('#')"/>
         </div>
       </div>
-      <p class="font-pfdin font-normal text-[16px] leading-[20.19px] text-darkHeader mobile:mt-[201px]">
+      <p class="font-pfdin font-normal text-[16px] leading-[20.19px] text-darkHeader tablet:mt-[201px]">
         Сделано в <span class="text-accent">Creative Mind Bureau</span>
       </p>
     </footer>
